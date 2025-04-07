@@ -27,7 +27,7 @@ Try it live: [ghostfiles.rip](https://ghostfiles.rip)
 2. Enter a password
 3. The file is **encrypted client-side**
 4. You get a unique download link with an ID
-5. When opened, the file is **decrypted client-side** and reconstructed
+5. When opened, the file is **decrypted client-side**
 
 ---
 
@@ -36,22 +36,7 @@ Try it live: [ghostfiles.rip](https://ghostfiles.rip)
 - Frontend: HTML, CSS, JavaScript (Vanilla)
 - Backend: Node.js + Express
 - Encryption: WebCrypto API (AES-GCM)
-- Storage: Randomized file nodes
 - Meta data: SQLite (`meta.db`)
-
----
-
-## 📂 Folder Structure
-
-/public ├── index.html ├── decrypt.html ├── style.css └── script.js
-
-/server ├── server.js └── meta.db
-
-/files-enc └── [encrypted files]
-
-yaml
-Kopieren
-Bearbeiten
 
 ---
 
