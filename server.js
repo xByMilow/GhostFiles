@@ -80,7 +80,7 @@ app.post("/upload", upload.single("file"), async (req, res) => {
       }
 
       const id = crypto.randomBytes(16).toString("hex");
-      const newPath = path.join("files-enc", `${id}.aes`);
+      const newPath = path.join("files", `${id}.aes`);
       await moveFile(req.file.path, newPath);
 
       db.run(
@@ -116,7 +116,7 @@ app.get("/api/file/:id", (req, res) => {
     if (!row) return res.status(404).send("Not found");
 
     const filePath = row.encrypted
-      ? path.join("files-enc", `${id}.aes`)
+      ? path.join("files", `${id}.aes`)
       : path.join("files", `${id}${row.ext}`);
 
     if (!fs.existsSync(filePath)) return res.status(404).send("Missing file");
@@ -172,9 +172,9 @@ function getClearAtTimestamp() {
 
 app.get("/api/stats", async (req, res) => {
   try {
-    const filesEnc = fs.readdirSync("files-enc");
+    const filesEnc = fs.readdirSync("files");
     const filesEncCount = filesEnc.length;
-    const filesEncSize = getFolderSize("files-enc");
+    const filesEncSize = getFolderSize("files");
     const nodeRam = process.memoryUsage().rss / (1024 * 1024);
     const clearAt = getClearAtTimestamp();
 
@@ -217,7 +217,7 @@ setInterval(() => {
 }, 1000);
 
 function clearAllData() {
-  fse.emptyDirSync(path.join(__dirname, "files-enc"));
+  fse.emptyDirSync(path.join(__dirname, "files"));
   db.run("DELETE FROM files");
   const newClearAt = Date.now() + CLEAR_INTERVAL_HOURS * 60 * 60 * 1000;
   fs.writeFileSync(dataPath, JSON.stringify({ clearAt: newClearAt }, null, 2));

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Ghost Files</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/assets/css/index.min.css">
+  <script src="/assets/js/global.min.js"></script>
+  <script src="/assets/js/index.min.js" defer></script>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Ghost Files</h2>
+
+    <div class="file-upload-wrapper">
+      <input type="file" id="file">
+      <label for="file" class="file-upload-label">
+        <img src="/assets/icons/file.png" alt="Upload Icon">  Select file
+      </label>
+    </div>
+
+    <div class="password-wrapper">
+      <input type="password" id="password" placeholder="Passwort">
+      <div class="password-actions">
+        <button id="togglePassword" title="Anzeigen/Ausblenden">
+          <img src="/assets/icons/eye.png" alt="Toggle Password">
+        </button>
+        <button id="copyPassword" title="Kopieren">
+          <img src="/assets/icons/copy.png" alt="Copy Password">
+        </button>
+      </div>
+    </div>
+
+    <div id="settingsMenu" class="settings-menu">
+      <select id="strength">
+        <option value="16">Light (16 characters)</option>
+        <option value="128">Hard (128 characters)</option>
+        <option value="512">Impossible (512 characters)</option>
+      </select>
+      <button id="generateBtn">
+        <img src="/assets/icons/generate.png" alt="Generate Password"> Generate password
+      </button>
+    </div>
+
+    <div class="upload-wrapper">
+      <button id="uploadBtn" class="upload-btn">
+        <img src="/assets/icons/upload.png" alt="Upload File"> Upload file
+      </button>
+    </div>
+
+    <div class="bar-container">
+      <div class="bar" id="progressBar"></div>
+    </div>
+
+<div class="result-wrapper" id="resultWrapper" style="display: none;">
+  <input type="text" id="resultBox" readonly>
+  <button id="copyResult" title="Kopieren">
+    <img src="/assets/icons/copy.png" alt="Copy Result">
+  </button>
+</div>
+
+<div id="status"></div>
+
+  <div class="stats-container">
+    <div class="stats-grid">
+      <div class="stat-box"><b>Files:</b> <span id="fileCount"></span></div>
+      <div class="stat-box"><b>Storage Used:</b> <span id="storageUsed"></span></div>
+      <div class="stat-box"><b>Node.js RAM:</b> <span id="nodeRamUsage"></span></div>
+      <div class="stat-box"><b>Clear in:</b> <span id="clearTimer"></span></div>
+    </div>
+  </div>
+
+</body>
+</html>
