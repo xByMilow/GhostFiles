@@ -73,5 +73,3 @@ The script will:
 - Install all dependencies  
 - Start the app in a `screen` session named `ghostfiles`  
 - Automatically run `/home/ghostfiles/start.sh`
-
----
