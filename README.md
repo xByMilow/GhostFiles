@@ -1,56 +1,96 @@
-# 🧊 GhostFiles.rip
+# 🏊 GhostFiles.rip
 
-**GhostFiles** is a privacy-focused file hosting service with client-side end-to-end encryption.  
-⚔️ No logins. No cookies. No tracking. Just you and your file.
+**GhostFiles** is a privacy-first file hosting service with **client-side end-to-end encryption**.  
+No logins. No cookies. No tracking.
 
 ---
 
 ## 🔐 Features
 
-- ✅ End-to-end encryption (AES-256) directly in the browser
-- 🌍 Decentralized storage via dynamic nodes
-- 🧨 Files are securely overwritten and auto-deleted after 7 days
-- 📉 Rate limiting and abuse protection built-in
+- ✅ End-to-end encryption (AES-GCM) in the browser  
+- 🢨 Files are securely overwritten and auto-deleted after 7 days  
+- 📉 Built-in rate limiting and abuse protection  
 - 🔎 Zero-knowledge architecture – the server never sees your data
 
 ---
 
 ## 🚀 Demo
 
-Try it live: [ghostfiles.rip](https://ghostfiles.rip)
+Try it live: [https://ghostfiles.rip](https://ghostfiles.rip)
 
 ---
 
-## 🧠 How it works
+## 🧠 How It Works
 
-1. Select a file in your browser
-2. Enter a password
-3. The file is **encrypted client-side**
-4. You get a unique download link with an ID
+1. Select a file in your browser  
+2. Enter a password  
+3. The file is **encrypted client-side**  
+4. You receive a unique download link with an ID  
 5. When opened, the file is **decrypted client-side**
 
 ---
 
 ## 🛠️ Tech Stack
 
-- Frontend: HTML, CSS, JavaScript (Vanilla)
-- Backend: Node.js + Express
-- Encryption: WebCrypto API (AES-GCM)
-- Meta data: SQLite (`meta.db`)
+- **Frontend:** HTML, CSS, Vanilla JavaScript  
+- **Backend:** Node.js + Express  
+- **Encryption:** WebCrypto API (AES-GCM)  
+- **Metadata Storage:** SQLite (`meta.db`)
 
 ---
 
 ## ⚙️ Installation
 
-```bash
-# Clone the repo
-git clone https://github.com/yourusername/ghostfiles.git
+### 🔧 Manual Installation
 
-# Go into the project directory
+```bash
+# Clone the repository
+git clone https://github.com/xByMilow/ghostfiles.git
+
+# Navigate into the project directory
 cd ghostfiles
 
-# Install server dependencies
+# Install dependencies
 npm install
 
 # Start the server
 npm start
+```
+
+---
+
+### ⚡ Auto Installation (Recommended)
+
+You can automatically install and start GhostFiles using the provided installation script:
+
+```bash
+bash <(curl -s https://raw.githubusercontent.com/xByMilow/ghostfiles/refs/heads/main/autoinstall.sh)
+```
+
+The script will:
+
+- Install `screen` (if not already installed)  
+- Clone the repository into `/home/ghostfiles`  
+- Install all dependencies  
+- Start the app in a `screen` session named `ghostfiles`  
+- Automatically run `/home/ghostfiles/start.sh`
+
+---
+
+### 📄 View Server Logs
+
+```bash
+screen -r ghostfiles
+```
+
+### 💡 Detach from Screen (without stopping the server)
+
+Press:
+
+```
+Ctrl + A, then D
+```
+
+---
+
+Feel free to open an issue or contribute to the project! PRs are welcome.
