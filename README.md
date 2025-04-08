@@ -1,4 +1,4 @@
-# 🏊 GhostFiles.rip
+# GhostFiles.rip
 
 **GhostFiles** is a privacy-first file hosting service with **client-side end-to-end encryption**.  
 No logins. No cookies. No tracking.
@@ -8,9 +8,8 @@ No logins. No cookies. No tracking.
 ## 🔐 Features
 
 - ✅ End-to-end encryption (AES-GCM) in the browser  
-- 🢨 Files are securely overwritten and auto-deleted after 7 days  
-- 📉 Built-in rate limiting and abuse protection  
-- 🔎 Zero-knowledge architecture – the server never sees your data
+- 🢨 Files are auto deleted after 7 days  
+- 🔎 Zero-knowledge architecture the server never sees your data
 
 ---
 
@@ -76,21 +75,3 @@ The script will:
 - Automatically run `/home/ghostfiles/start.sh`
 
 ---
-
-### 📄 View Server Logs
-
-```bash
-screen -r ghostfiles
-```
-
-### 💡 Detach from Screen (without stopping the server)
-
-Press:
-
-```
-Ctrl + A, then D
-```
-
----
-
-Feel free to open an issue or contribute to the project! PRs are welcome.
